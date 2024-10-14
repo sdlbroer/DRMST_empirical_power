@@ -83,7 +83,7 @@ for(i in DS_margins$id){
   
   # fit flexible parametric model on control arm
   fit.flexsurvs <- try(flexsurvspline(Surv(time,surv) ~ 1, data = df.temp[df.temp$arm == 1,], k = 2), silent = T)
-  if(i == 31) fit.flexsurvs <- try(flexsurvspline(Surv(time,surv) ~ 1, data = df.temp[df.temp$arm == 1,], k = 2, knots = c(2.7, 3.2)))
+  if(i == 26) fit.flexsurvs <- try(flexsurvspline(Surv(time,surv) ~ 1, data = df.temp[df.temp$arm == 1,], k = 2, knots = c(2.7, 3.2)))
   
   # DS margin
   NI_margins_flexsurv[NI_margins_flexsurv$id == i, 'margin_DS_clin'] <- margin.original
