@@ -24,7 +24,7 @@ Below is an overview of the files in this repository, categorized into the data 
   * flex_outcomes_subgroup_PH.R - subgroup analysis on trials without evidence of non-PH.
   * exp_outcomes.R - looks at the subset of the NI_testing.R outcomes which correspond to the margins which were converted using the exponential distribution
 
-Note: for all files, it holds that all dependencies (i.e. R-code that needs to be run beforehand) are loaded and run within the code itself. Therefore, it is not necessary to run consecutive files to obtain the results you are after. 
+Note: for each file it holds that all dependencies (i.e. R code that needs to be run beforehand) are loaded and run within the code itself. Therefore, it is not necessary to run consecutive files to obtain the results you are after. 
 
 ### References
 [1] Weir, IR., Trinquart, L. Design of non-inferiority randomized trials using the difference in restricted mean survival times. Clin Trials 2018; 15: 499-508. https://www.ncbi.nlm.nih.gov/pubmed/30074407
