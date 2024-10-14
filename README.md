@@ -3,7 +3,8 @@ This GitHub repository contains supplementary code to the preprint [TBA: referen
 
 ### Files overview
 Below is an overview of the files in this repository, categorized into the data files, data preprocessing, main analysis and subgroup analyses.
-*Data*  
+
+*Data* 
 * reconstructed.xlsx - the 65 reconstructed datasets. This includes the 35 datasets reconstructed by [1].
 * manuscript_information.xlsx - contains practical information on the 65 included trials, such as the sample size, significance level, etc.
 
