@@ -57,7 +57,7 @@ for(i in HR_margins$id){
 
 # convert margin: original margin = DS
 for(i in DS_margins$id){
-  if(i != 37){
+  if(i != 32){
     # define parameters
     rate.exp <- p0$lambda[p0$id == i]
     tau <- as.numeric(DS_margins[DS_margins$id == i, 'time_hor'])
