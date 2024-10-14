@@ -21,6 +21,8 @@ Weir_trials <- read_excel("manuscript_information.xlsx",
                                         "skip", "skip", "skip", "skip"))
 HR_margins <- rbind(trials[trials$margin_type == 'HR',],
                     Weir_trials[Weir_trials$margin_type == 'HR',])
+DS_margins <- rbind(trials[trials$margin_type == 'DS',],
+                    Weir_trials[Weir_trials$margin_type == 'DS',])
 
 # load necessary libraries
 
