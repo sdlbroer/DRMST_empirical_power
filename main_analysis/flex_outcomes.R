@@ -7,7 +7,6 @@ source('NI_testing.R')
 # load necessary libraries
 library(dplyr) # data wrangling
 library(ggplot2) # plots
-#library(ggmagnify) # magnify part of plot 
 
 # clean environment
 rm(list = setdiff(ls(), c('flex_NI_outcomes', 'flex_NI_concl', 
