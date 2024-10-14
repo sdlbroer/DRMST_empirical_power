@@ -18,7 +18,7 @@ Below is an overview of the files in this repository, categorized into the data 
 * flex_outcomes.R - looks at the subset of the NI_testing.R outcomes which correspond to the margins which were converted using flexible parametric regression.
 * SE_calculations.R - performs exact McNemar test.
 
-*Subgroup and sensitivity analyses*
+*Subgroup and sensitivity analyses (additional analyses)*
   * flex_outcomes_subgroup_EventRisk.R - subgroup analysis split by event rate.
   * flex_outcomes_subgroup_OriginalSumMeasure.R - subgroup analysis split by original summary measure.
   * flex_outcomes_subgroup_PH.R - subgroup analysis on trials without evidence of non-PH.
