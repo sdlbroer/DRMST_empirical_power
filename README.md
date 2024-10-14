@@ -15,7 +15,7 @@ Below is an overview of the files in this repository, categorized into the data 
 
 *Main analysis*
 * NI_testing.R - this is the main analysis. In this file, non-inferiority is tested using all methods we compared. That is, Cox regression for HR, flexible parametric regression for DS/DRMST and Kaplain-Meier for DS/DRMST.
-* flex_outcomes.R - looks at the subset of the NI_testing.R outcomes which correspond to the margins which were converted using flexible parametric regression.
+* flex_outcomes.R - looks at the subset of the NI_testing.R outcomes which correspond to the margins which were converted using flexible parametric regression. (This file creates the table with the primary outcomes).
 * SE_calculations.R - performs exact McNemar test.
 
 *Subgroup and sensitivity analyses (additional analyses)*
