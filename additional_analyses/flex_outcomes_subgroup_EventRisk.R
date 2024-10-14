@@ -40,7 +40,7 @@ for(i in unique(reconstructed$study_nr)){
   
   # fit flexible parametric model on control arm
   fit.flexsurvs <- try(flexsurvspline(Surv(time,surv) ~ 1, data = df.temp[df.temp$arm == 1,], k = 2), silent = T)
-  if(i == 31) fit.flexsurvs <-  try(flexsurvspline(Surv(time,surv) ~ 1, data = df.temp[df.temp$arm == 1,], k = 2, knots = c(2.7, 3.2)))
+  if(i == 26) fit.flexsurvs <-  try(flexsurvspline(Surv(time,surv) ~ 1, data = df.temp[df.temp$arm == 1,], k = 2, knots = c(2.7, 3.2)))
   
   # predict survival at tau
   surv.tau$surv.tau[surv.tau$id == i] <- as.numeric(predict(fit.flexsurvs, type="survival", times=tau)$.pred_survival[1])
@@ -139,4 +139,3 @@ power_p_high <- left_join(data.frame('margin' = names(flex_emp_power_high), flex
 rm(list = setdiff(ls(), c('power_p_high', 'power_p_low')))
 # note: 'low' here refers to a low survival, meaning it has a high event rate (!)
 # and vice versa 
-
