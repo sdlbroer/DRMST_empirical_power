@@ -48,9 +48,6 @@ power_p <- left_join(data.frame('margin' = names(flex_emp_power), flex_emp_power
          margin = ifelse(margin == 'DRMST_clin_flex_KM', 'DRMST', margin),
          margin = ifelse(margin == 'DRMST_max_flex_KM', 'DRMST', margin))
 
-# confidence interval around the difference between HR and DRMST 
-prop.test(apply(conclusions[,c(4,2)],2,sum), n = c(65,65))
-
 # plot p-values on log scale
 ggplot(data = mutate(pvalues, agreed_HRandDRMST = as.character(agreed_HRandDRMST)),
        mapping = aes(x = (as.numeric(margin_DRMST_clin))^(1/10), y = (as.numeric(margin_HR))^(1/10), 
