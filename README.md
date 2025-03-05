@@ -22,7 +22,7 @@ Below is an overview of the files in this repository, categorized into the data 
   * flex_outcomes_subgroup_EventRisk.R - subgroup analysis split by event rate.
   * flex_outcomes_subgroup_OriginalSumMeasure.R - subgroup analysis split by original summary measure.
   * flex_outcomes_subgroup_PH.R - subgroup analysis on trials without evidence of non-PH.
-  * exp_outcomes.R - looks at the subset of the NI_testing.R outcomes which correspond to the margins which were converted using the exponential distribution
+  * exp_outcomes.R - looks at the subset of the NI_testing.R outcomes which correspond to the margins which were converted using the exponential distribution.
 
 Note: for each file it holds that all dependencies (i.e. R code that needs to be run beforehand) are loaded and run within the code itself. Therefore, it is not necessary to run consecutive files to obtain the results you are after. 
 
