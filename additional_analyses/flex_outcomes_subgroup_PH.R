@@ -7,7 +7,6 @@ source('NI_testing.R')
 # load necessary libraries
 library(dplyr) # data wrangling
 library(survival) # PH test 
-library(psych) # harmonic and geometric mean
 
 # clean environment
 rm(list = setdiff(ls(), c('flex_NI_concl', 'flex_NI_outcomes', 'KM_concl', 'KM_outcomes', 
@@ -75,24 +74,16 @@ flex_emp_power_PH <- c(apply(flex_NI_concl_PH[,2:6], 2, function(x) mean(x, na.r
                        apply(KM_concl_PH[,c(4:5, 8:9)], 2, function(x) mean(x, na.rm = T)))
 flex_average_p_PH <- c(apply(flex_NI_outcomes_PH[,2:6], 2, function(x) mean(x, na.rm = T)),
                        apply(KM_outcomes_PH[,c(4:5, 8:9)], 2, function(x) mean(x, na.rm = T)))
-flex_harmonic_p_PH <- c(apply(flex_NI_outcomes_PH[,2:6], 2, function(x) harmonic.mean(x, na.rm = T)),                       
-                        apply(KM_outcomes_PH[,c(4:5, 8:9)], 2, function(x) harmonic.mean(x, na.rm = T)))
-flex_geometric_p_PH <- c(apply(flex_NI_outcomes_PH[,2:6], 2, function(x) geometric.mean(x, na.rm = T)),
-                         apply(KM_outcomes_PH[,c(4:5, 8:9)], 2, function(x) geometric.mean(x, na.rm = T)))
 
 # primary outcomes
 conclusions_PH <- conclusions[!(conclusions$id %in% non_PH),]
 pvalues_PH <- pvalues[!(pvalues$id %in% non_PH),]
 emp_power_PH <- flex_emp_power_PH[c('margin_HR', 'margin_DS_clin', 'margin_DRMST_clin')]
 average_p_PH <- flex_average_p_PH[c('margin_HR', 'margin_DS_clin', 'margin_DRMST_clin')]
-harmonic_p_PH <- flex_harmonic_p_PH[c('margin_HR', 'margin_DS_clin', 'margin_DRMST_clin')]
-geometric_p_PH <- flex_geometric_p_PH[c('margin_HR', 'margin_DS_clin', 'margin_DRMST_clin')]
 
 # dataframe with empirical power and average p for each analysis + summary measure
 power_p_PH <- left_join(data.frame('margin' = names(flex_emp_power_PH), flex_emp_power_PH),
                         data.frame('margin' = names(flex_average_p_PH), flex_average_p_PH)) %>%
-  left_join(data.frame('margin' = names(flex_harmonic_p_PH), flex_harmonic_p_PH)) %>%
-  left_join(data.frame('margin' = names(flex_geometric_p_PH), flex_geometric_p_PH)) %>%
   mutate(margin = substr(margin, 8, 100),
          # tau
          tau = ifelse(margin == 'HR', 'clinical', NA),
@@ -111,7 +102,6 @@ power_p_PH <- left_join(data.frame('margin' = names(flex_emp_power_PH), flex_emp
          margin = ifelse(margin == 'DS_max_flex_KM', 'DS', margin),
          margin = ifelse(margin == 'DRMST_clin_flex_KM', 'DRMST', margin),
          margin = ifelse(margin == 'DRMST_max_flex_KM', 'DRMST', margin))
-power_p_PH[,2:3] <- round(power_p_PH[,2:3],3)
 
 # keep only final table 
 rm(list = setdiff(ls(), c('power_p_PH', 'non_PH')))
